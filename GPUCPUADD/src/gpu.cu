@@ -1,4 +1,4 @@
-#include<gpu.h>
+#include<interface.h>
 
 __global__ void GADD(int *a , int *b, int *c)
 {
@@ -6,7 +6,7 @@ __global__ void GADD(int *a , int *b, int *c)
 }
 
 
-void AddGPU( int *a, int *b, int *c, int no_elem)
+void ADD( int *a, int *b, int *c, int no_elem)
 {
     std::cout << "FROM GPU" << std::endl;
     int *a_dev,*b_dev,*c_dev;

@@ -1,6 +1,4 @@
-#include <device.h>
-#include <gpu.h>
-#include <cpu.h>
+#include <interface.h>
 
 int main()
 {
@@ -14,11 +12,7 @@ int main()
         a[i] =i;
         b[i] = 5*i;
     }
-#ifdef CUDA_ENABLED      
-    AddGPU( a, b, c, nelem );
-#else
-    AddCPU(a, b, c, nelem);
-#endif
+    ADD( a, b, c, nelem );
     for(int i = 0; i < nelem; i++)
     {
         std::cout << a[i] << " " << b[i] << " " << c[i] << std::endl;
